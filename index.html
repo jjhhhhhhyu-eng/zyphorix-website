@@ -9,45 +9,56 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #0b0f1a;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     text-align: center;
-    overflow: hidden;
 }
 
-/* دوائر خلفية متحركة */
-.circle {
-    position: absolute;
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 50%;
-    animation: rotate 30s linear infinite;
+.box {
+    animation: fade 1.2s ease-in-out;
 }
 
-.circle:nth-child(1) {
-    width: 400px;
-    height: 400px;
-    top: 20%;
-    left: 50%;
-    transform: translateX(-50%);
+@keyframes fade {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.circle:nth-child(2) {
-    width: 600px;
-    height: 600px;
-    top: 10%;
-    left: 50%;
-    transform: translateX(-50%);
-    animation-duration: 50s;
+h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
 }
 
-@keyframes rotate {
-    from { transform: translateX(-50%) rotate(0deg); }
-    to { transform: translateX(-50%) rotate(360deg); }
+p {
+    opacity: 0.8;
+    margin-bottom: 25px;
 }
 
-.container {
-    position: relative;
-    z-index: 2;
-    padding: 100px 20px;
-    animation: fadeIn 1.5s ease forwards;
-    opacity: 0
+.btn {
+    padding: 15px 35px;
+    background: #5865F2;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #4752c4;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+    <h1>Zyphorix</h1>
+    <p>هذا هو الموقع الرسمي للبوت</p>
+    <a href="https://discord.com/oauth2/authorize?client_id=1478319998614376582 "class="btn">
+
+</body>
+</html>
