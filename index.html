@@ -1,63 +1,3 @@
-<!DOCTYPE h<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zyphorix</title>
-
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(135deg, #0066ff, #0033aa);
-      font-family: Arial, sans-serif;
-      color: white;
-      text-align: center;
-    }
-
-    h1 {
-      font-size: 50px;
-      margin-bottom: 10px;
-    }
-
-    p {
-      font-size: 20px;
-      opacity: 0.8;
-    }
-
-    .box {
-      background: rgba(0, 0, 0, 0.3);
-      padding: 40px;
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
-    }
-  </style>
-</head>
-<body>
-
-  <div class="box">
-    <h1>Zyphorix</h1>
-    <p>Welcome to my official website</p>
-  </div>
-
-</body>
-</html>
-<a href="https://discord.com/oauth2/authorize?client_id=1478319998614376582" target="_blank">
-  <button style="
-    padding: 15px 30px;
-    background-color: #5865F2;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-size: 18px;
-    cursor: pointer;
-  ">
-    انضم إلى للديسكورد 
-  </button>
-</a>
 <!DOCTYPE html>
 <html lang="ar">
 <head>
@@ -69,92 +9,45 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #0f3ec7, #1a5fff);
+    background: #0b0f1a;
     color: white;
     text-align: center;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
-/* انميشن الدخول */
-.fade-in {
-    animation: fadeIn 1.5s ease forwards;
-    opacity: 0;
+/* دوائر خلفية متحركة */
+.circle {
+    position: absolute;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 50%;
+    animation: rotate 30s linear infinite;
 }
 
-@keyframes fadeIn {
-    to { opacity: 1; transform: translateY(0); }
+.circle:nth-child(1) {
+    width: 400px;
+    height: 400px;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.circle:nth-child(2) {
+    width: 600px;
+    height: 600px;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-duration: 50s;
+}
+
+@keyframes rotate {
+    from { transform: translateX(-50%) rotate(0deg); }
+    to { transform: translateX(-50%) rotate(360deg); }
 }
 
 .container {
-    padding: 60px 20px;
-    transform: translateY(20px);
-}
-
-h1 {
-    font-size: 40px;
-    margin-bottom: 10px;
-}
-
-p {
-    font-size: 18px;
-    opacity: 0.8;
-}
-
-.button {
-    margin-top: 25px;
-    padding: 15px 30px;
-    background: #5865F2;
-    border: none;
-    border-radius: 12px;
-    color: white;
-    font-size: 18px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.button:hover {
-    transform: scale(1.05);
-}
-
-/* قسم الاوامر */
-.commands {
-    background: rgba(0,0,0,0.2);
-    margin: 60px auto;
-    padding: 30px;
-    border-radius: 20px;
-    width: 90%;
-    max-width: 600px;
-}
-
-.command {
-    background: rgba(255,255,255,0.1);
-    margin: 10px 0;
-    padding: 10px;
-    border-radius: 10px;
-}
-</style>
-</head>
-
-<body>
-
-<div class="container fade-in">
-    <h1>سيرفر Zyphorix</h1>
-    <p>هذا موقعنا الرسمي</p>
-
-    <a href="PUT_YOUR_BOT_LINK_HERE" target="_blank">
-        <button class="button">أضف البوت إلى سيرفرك</button>
-    </a>
-</div>
-
-<div class="commands fade-in" style="animation-delay: 0.5s;">
-    <h2>أوامر البوت</h2>
-
-    <div class="command">/say — يكرر الكلام</div>
-    <div class="command">/ban — حظر عضو</div>
-    <div class="command">/ban remove — فك الحظر</div>
-    <div class="command">/ban temp — حظر مؤقت</div>
-
-</div>
-
-</body>
-  </html>
+    position: relative;
+    z-index: 2;
+    padding: 100px 20px;
+    animation: fadeIn 1.5s ease forwards;
+    opacity: 0
